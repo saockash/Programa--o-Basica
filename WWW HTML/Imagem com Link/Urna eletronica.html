@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teclado Numérico</title>
+    <style>
+        body {
+            background-color: black; /* Fundo preto */
+            color: white; /* Cor do texto branca para contraste */
+            font-family: Arial, sans-serif; /* Fonte padrão */
+            margin: 0; /* Remove a margem padrão */
+            padding: 0; /* Remove o padding padrão */
+        }
+        .container {
+            display: flex; /* Usa Flexbox para layout */
+            height: 100vh; /* Altura total da tela */
+        }
+        .left-panel {
+            flex: 1; /* O painel esquerdo ocupa 1 parte do espaço disponível */
+            display: flex;
+            flex-direction: column; /* Alinha os itens verticalmente */
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center; /* Centraliza horizontalmente */
+            padding: 20px; /* Adiciona padding */
+            box-sizing: border-box; /* Inclui o padding no cálculo da largura */
+        }
+        .right-panel {
+            flex: 1; /* O painel direito ocupa 1 parte do espaço disponível */
+            display: flex;
+            flex-direction: column; /* Alinha os itens verticalmente */
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center; /* Centraliza horizontalmente */
+            padding: 20px; /* Adiciona padding */
+            box-sizing: border-box; /* Inclui o padding no cálculo da largura */
+            background-color: #333; /* Fundo escuro para o painel direito */
+            color: white; /* Cor do texto branca para contraste */
+        }
+        .left-panel h1, .left-panel h2 {
+            text-align: center;
+            margin: 0 0 20px 0; /* Remove margens laterais e adiciona margem inferior */
+        }
+        .input-group {
+            margin-bottom: 20px; /* Adiciona espaço abaixo do grupo de inputs */
+        }
+        .input-group input {
+            display: block;
+            width: 100%; /* Faz o input ocupar toda a largura disponível */
+            padding: 10px; /* Adiciona padding interno ao input */
+            font-size: 16px; /* Ajusta o tamanho da fonte do input */
+            margin-bottom: 10px; /* Adiciona espaço abaixo do input */
+            border: 1px solid #ccc; /* Adiciona uma borda cinza clara */
+            border-radius: 5px; /* Bordas arredondadas para o input */
+        }
+        .candidate-list {
+            text-align: left; /* Alinha o texto à esquerda */
+            width: 100%; /* Faz a lista ocupar toda a largura disponível */
+        }
+        .candidate-list ul {
+            list-style-type: none; /* Remove os marcadores padrão da lista */
+            padding: 0; /* Remove o padding padrão da lista */
+        }
+        .candidate-list li {
+            margin-bottom: 10px; /* Adiciona espaço abaixo de cada item da lista */
+        }
+        .button-container {
+            text-align: center; /* Centraliza os botões */
+            margin-top: 20px;
+        }
+        .button-row {
+            margin-bottom: 10px; /* Espaçamento entre linhas de botões */
+        }
+        .button-container button {
+            margin: 5px; /* Adiciona um pequeno espaçamento entre os botões */
+            padding: 10px 20px; /* Adiciona algum padding para um visual melhor */
+            font-size: 16px; /* Ajusta o tamanho da fonte */
+            background-color: #333; /* Cor de fundo padrão dos botões */
+            color: white; /* Cor do texto dos botões */
+            border: none; /* Remove borda padrão dos botões */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Cursor pointer para indicar que é clicável */
+        }
+        .button-container button:hover {
+            background-color: #555; /* Cor de fundo ao passar o mouse sobre o botão */
+        }
+        .corrige-button {
+            background-color: orange; /* Cor de fundo laranja para o botão "Corrige" */
+            color: black; /* Cor do texto preta para contraste com o laranja */
+        }
+        .corrige-button:hover {
+            background-color: darkorange; /* Cor de fundo ao passar o mouse sobre o botão "Corrige" */
+        }
+        .confirma-button {
+            background-color: green; /* Cor de fundo verde para o botão "Confirma" */
+            color: white; /* Cor do texto branca para contraste com o verde */
+        }
+        .confirma-button:hover {
+            background-color: darkgreen; /* Cor de fundo ao passar o mouse sobre o botão "Confirma" */
+        }
+        .wide-button-row {
+            display: flex; /* Usa Flexbox para distribuir os botões */
+            justify-content: center; /* Centraliza os botões horizontalmente */
+            margin-top: 20px; /* Espaçamento superior */
+        }
+        .result {
+            color: yellow; /* Cor do texto dos resultados */
+            font-size: 18px; /* Tamanho da fonte para os resultados */
+            margin-top: 20px; /* Espaçamento superior para os resultados */
+            text-align: center; /* Centraliza o texto dos resultados */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Digite seu voto</h1>
+            <h2>Prefeito</h2>
+            <div class="input-group">
+                <input id="candidatoInput" type="text" placeholder="Digite o número do candidato" readonly>
+            </div>
+            <div class="candidate-list">
+                <ul>
+                    <li>01 - Pamonha</li>
+                    <li>02 - Abacaxi</li>
+                    <li>99 - Morango</li>
+                </ul>
+            </div>
+            <div class="button-container">
+                <div class="button-row">
+                    <button onclick="adicionarNumero(1)">1</button>
+                    <button onclick="adicionarNumero(2)">2</button>
+                    <button onclick="adicionarNumero(3)">3</button>
+                </div>
+                <div class="button-row">
+                    <button onclick="adicionarNumero(4)">4</button>
+                    <button onclick="adicionarNumero(5)">5</button>
+                    <button onclick="adicionarNumero(6)">6</button>
+                </div>
+                <div class="button-row">
+                    <button onclick="adicionarNumero(7)">7</button>
+                    <button onclick="adicionarNumero(8)">8</button>
+                    <button onclick="adicionarNumero(9)">9</button>
+                </div>
+                <div class="single-button-row">
+                    <button onclick="adicionarNumero(0)">0</button>
+                </div>
+                <div class="wide-button-row">
+                    <button onclick="votar('branco')">Branco</button>
+                    <button class="corrige-button" onclick="corrigir()">Corrige</button>
+                    <button class="confirma-button" onclick="confirma()">Confirma</button>
+                    <button class="confirma-button" onclick="apurar()">Apuração</button>
+                    <button class="confirma-button" onclick="zerar()">Zerar votação</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <h1>Resultado da Apuração</h1>
+            <div class="result" id="resultado">
+                <!-- Resultados serão exibidos aqui -->
+            </div>
+        </div>
+    </div>
+    <script>
+        // Contadores de votos
+        let votos = {
+            '01': 0,
+            '02': 0,
+            '99': 0,
+            'nulo': 0,
+            'branco': 0
+        };
+
+        // Função para adicionar número ao campo de entrada
+        function adicionarNumero(numero) {
+            const input = document.getElementById('candidatoInput');
+            input.value += numero;
+        }
+
+        // Função para votar
+        function votar(numero) {
+            const input = document.getElementById('candidatoInput');
+            const voto = input.value;
+            if (numero === 'branco') {
+                votos['branco']++;
+                input.value = '';
+            } else {
+                const candidato = voto.toString().padStart(2, '0'); // Formata o número com dois dígitos
+                if (votos.hasOwnProperty(candidato)) {
+                    votos[candidato]++;
+                } else {
+                    votos['nulo']++;
+                }
+                input.value = '';
+            }
+        }
+
+        // Função para corrigir o voto
+        function corrigir() {
+            document.getElementById('candidatoInput').value = '';
+        }
+
+        // Função para confirmar o voto
+        function confirma() {
+            votar('nulo'); // Voto nulo se não clicar em Branco ou confirmar corretamente
+        }
+
+        // Função para apurar os votos
+        function apurar() {
+            const resultadoDiv = document.getElementById('resultado');
+            let resultado = `<h2>Resultado da Apuração</h2>`;
+            for (let candidato in votos) {
+                resultado += `<p>${candidato} - ${votos[candidato]} votos</p>`;
+            }
+            resultadoDiv.innerHTML = resultado;
+        }
+
+        // Função para zerar os votos
+        function zerar() {
+            votos = {
+                '01': 0,
+                '02': 0,
+                '99': 0,
+                'nulo': 0,
+                'branco': 0
+            };
+            document.getElementById('resultado').innerHTML = '<p>Votação zerada!</p>';
+            corrigir(); // Limpa o campo de entrada
+        }
+    </script>
+</body>
+</html>

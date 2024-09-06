@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Calcula Idade do Usuário</title>
+</head>
+<body>
+
+    <script>
+        // Solicita ao usuário que insira seu nome e ano de nascimento através de prompts
+        let var_nome = prompt("Digite seu nome: ");
+        let var_ano_nascimento = prompt("Digite o ano de nascimento: ");
+        
+        // Obtém o ano atual
+        let var_ano_atual = new Date().getFullYear();
+        
+        // Calcula a idade com base no ano atual e no ano de nascimento fornecido
+        let var_idade = var_ano_atual - var_ano_nascimento;
+        
+        // Usa document.write para substituir o conteúdo da página
+        document.write('<h2>Dados SAIDA do Usuário</h2>');
+        document.write('Seu nome: ' + var_nome + '<br>'); // Adiciona uma quebra de linha após o nome
+        document.write('Sua idade: ' + var_idade + '<br>'); // Adiciona uma quebra de linha após a idade
+    </script>
+
+</body>
+</html>

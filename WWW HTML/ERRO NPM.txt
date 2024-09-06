@@ -1,0 +1,19 @@
+PS C:\Users\ADMIN\Desktop\REACT> npm create vite@latest
+npm : O termo 'npm' não é reconhecido como nome de cmdlet, função, arquivo de script ou programa operável. Verifique a g
+ou, se um caminho tiver sido incluído, veja se o caminho está correto e tente novamente.
+No linha:1 caractere:1
++ npm create vite@latest
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (npm:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\ADMIN\Desktop\REACT> npx create vite@latest
+npx : O termo 'npx' não é reconhecido como nome de cmdlet, função, arquivo de script ou programa operável. Verifique a 
+grafia do nome ou, se um caminho tiver sido incluído, veja se o caminho está correto e tente novamente.
+No linha:1 caractere:1
++ npx create vite@latest
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (npx:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\ADMIN\Desktop\REACT>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teclado Numérico</title>
+    <style>
+        body {
+            background-color: black; /* Fundo preto */
+            color: white; /* Cor do texto branca para contraste */
+            font-family: Arial, sans-serif; /* Fonte padrão */
+            margin: 0; /* Remove a margem padrão */
+            padding: 0; /* Remove o padding padrão */
+        }
+        h1 {
+            text-align: center;
+            color: white; /* Cor do texto do título branca */
+        }
+        .center-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .button-container {
+            text-align: center; /* Centraliza os botões */
+            margin-top: 20px;
+        }
+        .button-row {
+            margin-bottom: 10px; /* Espaçamento entre linhas de botões */
+        }
+        .button-container button {
+            margin: 5px; /* Adiciona um pequeno espaçamento entre os botões */
+            padding: 10px 20px; /* Adiciona algum padding para um visual melhor */
+            font-size: 16px; /* Ajusta o tamanho da fonte */
+            background-color: #333; /* Cor de fundo padrão dos botões */
+            color: white; /* Cor do texto dos botões */
+            border: none; /* Remove borda padrão dos botões */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Cursor pointer para indicar que é clicável */
+        }
+        .button-container button:hover {
+            background-color: #555; /* Cor de fundo ao passar o mouse sobre o botão */
+        }
+        .corrige-button {
+            background-color: orange; /* Cor de fundo laranja para o botão "Corrige" */
+            color: black; /* Cor do texto preta para contraste com o laranja */
+        }
+        .corrige-button:hover {
+            background-color: darkorange; /* Cor de fundo ao passar o mouse sobre o botão "Corrige" */
+        }
+        .confirma-button {
+            background-color: green; /* Cor de fundo verde para o botão "Confirma" */
+            color: white; /* Cor do texto branca para contraste com o verde */
+        }
+        .confirma-button:hover {
+            background-color: darkgreen; /* Cor de fundo ao passar o mouse sobre o botão "Confirma" */
+        }
+        .wide-button-row {
+            display: flex; /* Usa Flexbox para distribuir os botões */
+            justify-content: center; /* Centraliza os botões horizontalmente */
+            margin-top: 20px; /* Espaçamento superior */
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercício Teclado Numérico</h1>
+    <img src="https://www.candidorodrigues.sp.gov.br/uploads/images/17660dfba17d0ddf9ba3dcfb60606257.png" alt="Brasão Eleitoral" width="250" class="center-image">
+    
+    <div class="button-container">
+        <div class="button-row">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+        </div>
+        <div class="button-row">
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+        </div>
+        <div class="button-row">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+        </div>
+        <div class="single-button-row">
+            <button>0</button>
+        </div>
+        <div class="wide-button-row">
+            <button>Branco</button>
+            <button class="corrige-button">Corrige</button>
+            <button class="confirma-button">Confirma</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Formulário de Usuário</title> <!-- Título da página -->
+</head>
+<body>
+
+    <h2>Dados entrada do Usuário</h2>
+    <!-- Formulário para entrada do usuário -->
+    <form id="formulario">
+        <!-- Campo para o nome do usuário -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+        <br><br>
+        
+        <!-- Campo para o dia de nascimento -->
+        <label for="dia">Dia de Nascimento:</label>
+        <input type="number" id="dia" min="1" max="31" required>
+        <br><br>
+        
+        <!-- Campo para o mês de nascimento -->
+        <label for="mes">Mês de Nascimento:</label>
+        <input type="number" id="mes" min="1" max="12" required>
+        <br><br>
+        
+        <!-- Campo para o ano de nascimento -->
+        <label for="ano">Ano de Nascimento:</label>
+        <input type="number" id="ano" required>
+        <br><br>
+        
+        <!-- Botão que, ao ser clicado, aciona o JavaScript para processar os dados e atualizar a página -->
+        <button type="button" onclick="
+            // Obtém os valores dos inputs
+            let nome = document.getElementById('nome').value;
+            let diaNascimento = parseInt(document.getElementById('dia').value, 10);
+            let mesNascimento = parseInt(document.getElementById('mes').value, 10);
+            let anoNascimento = parseInt(document.getElementById('ano').value, 10);
+            
+            // Obtém o ano atual e a data atual
+            let hoje = new Date();
+            let anoAtual = hoje.getFullYear();
+            let mesAtual = hoje.getMonth() + 1; // Meses são indexados de 0 a 11
+            let diaAtual = hoje.getDate();
+            
+            // Calcula a idade
+            let idade = anoAtual - anoNascimento;
+            if (mesAtual < mesNascimento || (mesAtual === mesNascimento && diaAtual < diaNascimento)) {
+                idade--; // Decrementa a idade se ainda não tiver passado o aniversário no ano atual
+            }
+            
+            // Usa document.write para substituir o conteúdo da página com os resultados
+            document.write('<h2>Dados SAIDA do Usuário</h2>'); // Adiciona o título para a seção de saída
+            document.write('Seu nome: ' + nome + '<br>'); // Adiciona o nome do usuário
+            document.write('Sua idade: ' + idade + '<br>'); // Adiciona a idade calculada do usuário
+        ">Submeter</button>
+    </form>
+
+</body>
+</html>
