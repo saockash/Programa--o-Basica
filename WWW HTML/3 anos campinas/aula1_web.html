@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Frequência</title>
+</head>
+
+<body>
+    <script>
+        let var_velocidade, var_distancia, var_frequencia;
+        var_velocidade = Number(prompt("Digite a velocidade: "));
+        var_distancia = Number(prompt("Digite a distância: "));
+        var_frequencia = var_velocidade / var_distancia;
+
+        document.writeln("<br>Relatório<br>");
+        document.writeln("<br>Calculo de Frequência<br><br>");
+        document.writeln("O valor da velocidade é: " + var_velocidade + " m/s <br>");
+        document.writeln("O valor da distância é: " + var_distancia + " m <br>");
+        document.writeln("O valor da frequência é: " + var_frequencia.toFixed(2) + " hertz <br>");
+
+        alert(
+            'O valor da velocidade em m/s é: ' + var_velocidade + '\n' +
+            'O valor da distância em m é: ' + var_distancia + '\n' +
+            'O valor da frequência em hertz é: ' + var_frequencia.toFixed(2)
+        );
+    </script>
+</body>
+</html>

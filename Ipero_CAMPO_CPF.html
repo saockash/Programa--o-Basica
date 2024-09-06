@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Passageiros Avião</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Formulário de Cadastro</h1>
+    <!-- Formulário para cadastro do passageiro -->
+    <form id="cadastroPassageiro">
+        <!-- Campo CPF Passageiro -->
+        <div class="form-group">
+            <!-- Label para o campo CPF -->
+            <label for="cpf">CPF Passageiro (*)</label><br>
+            <!-- Campo de entrada para CPF com um ID para referenciá-lo no script -->
+            <input type="text" id="cpf" name="cpf" placeholder="Digite CPF Passageiro" required>
+            <!-- Mensagem de erro que será exibida se a validação falhar, inicialmente escondida -->
+            <span id="cpfError" style="color: red; display: none;">Erro: O campo CPF deve ter 11 caracteres numéricos.</span>
+        </div><br>
+
+        <!-- Botão para submeter o formulário -->
+        <button type="submit">Testar Validação</button>
+    </form>
+
+    <!-- Script JavaScript para validar o CPF -->
+    <script>
+        // Adiciona um evento de escuta para o formulário, para o evento 'submit'
+        document.getElementById('cadastroPassageiro').addEventListener('submit', function(event) {
+            // Obtém o valor do campo CPF
+            var cpf = document.getElementById('cpf').value;
+            // Obtém o elemento da mensagem de erro
+            var cpfError = document.getElementById('cpfError');
+
+            // Verifica se o CPF tem exatamente 11 caracteres numéricos
+            if (!/^\d{11}$/.test(cpf)) {
+                // Se a validação falhar, exibe a mensagem de erro
+                cpfError.style.display = 'inline';
+                // Impede o envio do formulário
+                event.preventDefault();
+            } else {
+                // Se a validação passar, esconde a mensagem de erro (se estiver visível)
+                cpfError.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>

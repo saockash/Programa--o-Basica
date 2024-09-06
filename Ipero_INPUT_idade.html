@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Idade</title>
+</head>
+<body>
+
+<label for="idade">Digite sua idade:</label>
+<input type="text" id="idade">
+<button onclick="mostrarIdade()">Clique aqui</button>
+
+<script>
+function mostrarIdade() {
+    var var_idade = document.getElementById("idade").value;
+    document.open(); // Abre o documento para escrita
+    document.writeln("Você digitou a idade: " + var_idade);
+    document.close(); // Fecha o documento após escrita
+}
+</script>
+
+</body>
+</html>

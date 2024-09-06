@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Botão</title>
+</head>
+<body>
+
+<label for="nome">Digite seu nome:</label>
+<input type="text" id="nome">
+<button onclick="mostrarNome()">Clique aqui</button>
+
+<script>
+function mostrarNome() {
+    var var_nome = document.getElementById("nome").value;
+    document.open(); // Abre o documento para escrita
+    document.writeln("Você digitou: " + var_nome);
+    document.close(); // Fecha o documento após escrita
+}
+</script>
+
+</body>
+</html>

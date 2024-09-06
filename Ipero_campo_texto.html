@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Passageiros Avião</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Formulário de Cadastro</h1>
+    
+    <!-- Botão para testar a validação usando prompt -->
+    <button id="testarValidacao">Testar Validação</button>
+
+    <!-- Botão para limpar o campo "Nome" (não usado com prompt, mas incluído para completude) -->
+    <button id="limparCampo">Limpar Campo</button>
+
+    <!-- Espaço para exibir a quantidade de caracteres -->
+    <div id="output"></div>
+
+    <!-- Início do código JavaScript -->
+    <script>
+        // Adiciona um evento de clique ao botão "Testar Validação"
+        document.getElementById('testarValidacao').addEventListener('click', function() {
+            // Solicita ao usuário o nome usando o prompt
+            var nome = prompt("Digite o nome do passageiro:");
+
+            // Verifica se o usuário digitou algo
+            if (nome !== null) {
+                // Calcula a quantidade de caracteres no nome digitado
+                var charCount = nome.length;
+
+                // Exibe a quantidade de caracteres no div com ID "output"
+                document.getElementById('output').innerHTML = "Quantidade de caracteres: " + charCount;
+            } else {
+                // Se o usuário cancelar o prompt, exibe uma mensagem
+                document.getElementById('output').innerHTML = "Nenhum nome digitado.";
+            }
+        });
+
+        // Adiciona um evento de clique ao botão "Limpar Campo" (não afeta o prompt)
+        document.getElementById('limparCampo').addEventListener('click', function() {
+            // Limpa o conteúdo do elemento de saída
+            document.getElementById('output').innerHTML = '';
+        });
+    </script>
+    <!-- Fim do código JavaScript -->
+
+</body>
+</html>

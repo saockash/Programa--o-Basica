@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Idade</title>
+</head>
+<body>
+
+<label for="idade">Digite sua idade:</label>
+<input type="number" id="idade" min="0" max="150">
+<button onclick="mostrarIdade()">Clique aqui</button>
+<p id="resultado"></p>
+
+<script>
+function mostrarIdade() {
+    var var_idade = document.getElementById("idade").value;
+    // Verifica se a idade está dentro do intervalo permitido
+    if (var_idade >= 0 && var_idade <= 150) {
+        document.getElementById("resultado").innerHTML = "Você digitou a idade: " + var_idade;
+    } else {
+        document.getElementById("resultado").innerHTML = "Por favor, digite uma idade entre 0 e 150.";
+    }
+}
+</script>
+
+</body>
+</html>

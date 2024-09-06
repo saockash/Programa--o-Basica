@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Passageiros Avião</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Formulário de Cadastro</h1>
+    <form id="cadastroPassageiro">
+        <!-- Campo CPF Passageiro -->
+        <div class="form-group">
+            <label for="cpf">CPF Passageiro (*)</label><br>
+            <input type="text" id="cpf" name="cpf" placeholder="Digite CPF Passageiro" required>
+            <div class="error-message" id="error-cpf"></div>
+        </div><br>
+
+        <!-- Campo Nome Passageiro -->
+        <div class="form-group">
+            <label for="nome">Nome Passageiro (*)</label><br>
+            <input type="text" id="nome" name="nome" placeholder="Digite Nome Passageiro" required>
+            <div class="error-message" id="error-nome"></div>
+        </div><br>
+
+        <!-- Campo Email Passageiro -->
+        <div class="form-group">
+            <label for="email">Email Passageiro (*)</label><br>
+            <input type="email" id="email" name="email" placeholder="Digite Email Passageiro" required>
+            <div class="error-message" id="error-email"></div>
+        </div><br>
+
+        <!-- Campo Peso Passageiro -->
+        <div class="form-group">
+            <label for="peso_passageiro">Peso Passageiro (Kg) (*)</label><br>
+            <input type="number" id="peso_passageiro" name="peso_passageiro" placeholder="Digite Peso Passageiro" required min="0" step="0.1">
+            <div class="error-message" id="error-peso_passageiro"></div>
+        </div><br>
+
+        <!-- Campo CEP Passageiro -->
+        <div class="form-group">
+            <label for="cep">CEP Passageiro (*)</label><br>
+            <input type="text" id="cep" name="cep" placeholder="Digite CEP Passageiro" required>
+            <div class="error-message" id="error-cep"></div>
+        </div><br>
+
+        <!-- Campo Endereço Passageiro -->
+        <div class="form-group">
+            <label for="endereco">Endereço Passageiro (*)</label><br>
+            <input type="text" id="endereco" name="endereco" placeholder="Digite Endereço Passageiro" required>
+            <div class="error-message" id="error-endereco"></div>
+        </div><br>
+
+        <!-- Campo Número Endereço Passageiro -->
+        <div class="form-group">
+            <label for="numero_endereco">Número Endereço Passageiro (*)</label><br>
+            <input type="number" id="numero_endereco" name="numero_endereco" placeholder="Digite Número Endereço Passageiro" required min="0">
+            <div class="error-message" id="error-numero_endereco"></div>
+        </div><br>
+
+        <!-- Campo Complemento Endereço Passageiro -->
+        <div class="form-group">
+            <label for="complemento">Complemento Endereço Passageiro (*)</label><br>
+            <input type="text" id="complemento" name="complemento" placeholder="Digite Complemento Endereço Passageiro" required>
+            <div class="error-message" id="error-complemento"></div>
+        </div><br>
+
+        <!-- Campo Cidade Endereço Passageiro -->
+        <div class="form-group">
+            <label for="cidade">Cidade Endereço Passageiro (*)</label><br>
+            <input type="text" id="cidade" name="cidade" placeholder="Digite Cidade Endereço Passageiro" required>
+            <div class="error-message" id="error-cidade"></div>
+        </div><br>
+
+        <!-- Campo UF Endereço Passageiro -->
+        <div class="form-group">
+            <label for="uf">UF Endereço Passageiro (*)</label><br>
+            <select id="uf" name="uf" required>
+                <option value="">Selecione a UF</option>
+                <!-- Lista de UFs do Brasil -->
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="DF">DF</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS">RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+            </select>
+            <div class="error-message" id="error-uf"></div>
+        </div><br>
+
+        <!-- Campo País Endereço Passageiro -->
+        <div class="form-group">
+            <label for="pais">País Endereço Passageiro (*)</label><br>
+            <select id="pais" name="pais" required>
+                <option value="">Selecione o País</option>
+                <!-- Lista de países da América -->
+                <option value="Argentina">Argentina</option>
+                <option value="Bolívia">Bolívia</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Chile">Chile</option>
+                <option value="Colômbia">Colômbia</option>
+                <option value="Equador">Equador</option>
+                <option value="Guiana">Guiana</option>
+                <option value="Paraguai">Paraguai</option>
+                <option value="Peru">Peru</option>
+                <option value="Suriname">Suriname</option>
+                <option value="Uruguai">Uruguai</option>
+                <option value="Venezuela">Venezuela</option>
+            </select>
+            <div class="error-message" id="error-pais"></div>
+        </div><br>
+
+        <!-- Campo Número Celular Passageiro -->
+        <div class="form-group">
+            <label for="numero_celular">Número Celular Passageiro (*)</label><br>
+            <input type="text" id="numero_celular" name="numero_celular" placeholder="Digite Número Celular Passageiro" required>
+            <div class="error-message" id="error-numero_celular"></div>
+        </div><br>
+
+        <!-- Campo Número Celular Familiar -->
+        <div class="form-group">
+            <label for="numero_celular_familiar">Número Celular Familiar (*)</label><br>
+            <input type="text" id="numero_celular_familiar" name="numero_celular_familiar" placeholder="Digite Número Celular Familiar" required>
+            <div class="error-message" id="error-numero_celular_familiar"></div>
+        </div><br>
+
+        <!-- Campo Comentário e Recados Familiar -->
+        <div class="form-group">
+            <label for="comentario">Comentário e Recados Familiar (em caso de acidente) (*)</label><br>
+            <textarea id="comentario" name="comentario" placeholder="Digite Comentário e Recados Familiar" required></textarea>
+            <div class="error-message" id="error-comentario"></div>
+        </div><br>
+
+        <!-- Campo Senha Passageiro -->
+        <div class="form-group">
+            <label for="senha">Senha Passageiro (*)</label><br>
+            <div class="password-container">
+                <input type="password" id="senha" name="senha" placeholder="Digite Senha Passageiro" required>
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+            <div class="error-message" id="error-senha"></div>
+        </div><br>
+
+        <!-- Campo Peso Bagagem Mão -->
+        <div class="form-group">
+            <label for="peso_bagagem_mao">Peso Bagagem Mão (Kg) (*)</label><br>
+            <input type="number" id="peso_bagagem_mao" name="peso_bagagem_mao" placeholder="Digite Peso Bagagem Mão" required min="0" step="0.1">
+            <div class="error-message" id="error-peso_bagagem_mao"></div>
+        </div><br>
+
+        <!-- Campo Código Peso Bagagem Mão -->
+        <div class="form-group">
+            <label for="codigo_peso_bagagem_mao">Código Peso Bagagem Mão</label><br>
+            <input type="text" id="codigo_peso_bagagem_mao" name="codigo_peso_bagagem_mao" placeholder="Digite Código Peso Bagagem Mão">
+        </div><br>
+
+        <!-- Campo Peso Bagagem das Malas -->
+        <div class="form-group">
+            <label for="peso_bagagem_malas">Peso Bagagem das Malas (Kg) (*)</label><br>
+            <input type="number" id="peso_bagagem_malas" name="peso_bagagem_malas" placeholder="Digite Peso Bagagem das Malas" required min="0" step="0.1">
+            <div class="error-message" id="error-peso_bagagem_malas"></div>
+        </div><br>
+
+        <!-- Campo Código Peso Bagagem das Malas -->
+        <div class="form-group">
+            <label for="codigo_peso_bagagem_malas">Código Peso Bagagem das Malas</label><br>
+            <input type="text" id="codigo_peso_bagagem_malas" name="codigo_peso_bagagem_malas" placeholder="Digite Código Peso Bagagem das Malas">
+        </div><br>
+
+        <!-- Escolha do Banco -->
+        <div class="form-group">
+            <label>Escolha do Banco:</label><br>
+            <label><input type="radio" name="banco" value="Economico"> Econômica</label><br>
+            <label><input type="radio" name="banco" value="Executiva"> Executiva</label><br>
+            <label><input type="radio" name="banco" value="Leito"> Leito</label>
+        </div><br>
+
+        <!-- Preferências de Bebidas -->
+        <div class="form-group">
+            <label>Você prefere beber?</label><br>
+            <label><input type="checkbox" name="bebida" value="cafe"> Café</label><br>
+            <label><input type="checkbox" name="bebida" value="agua_sem_gas"> Água sem gás</label><br>
+            <label><input type="checkbox" name="bebida" value="agua_com_gas"> Água com gás</label><br>
+            <label><input type="checkbox" name="bebida" value="suco_laranja"> Suco de Laranja</label><br>
+            <label><input type="checkbox" name="bebida" value="suco_uva"> Suco de Uva</label><br>
+            <label><input type="checkbox" id="select-all" onclick="toggleCheckboxes(this)"> Selecionar Todos</label>
+        </div><br>
+
+        <!-- Botão Enviar -->
+        <button type="submit">Enviar</button>
+
+        <!-- Mensagens de Erro e Sucesso -->
+        <div id="error-message" class="error-message"></div>
+        <div id="success-message" class="success-message"></div>
+    </form>
+
+    <script>
+        // Máscaras de entrada
+        function formatInput(input, mask) {
+            input.addEventListener('input', function() {
+                let value = this.value.replace(/\D/g, '');
+                this.value = mask.replace(/#/g, function() {
+                    return value.length > 0 ? value.charAt(0) : '';
+                }).trim();
+            });
+        }
+
+        formatInput(document.getElementById('cpf'), '###.###.###-##');
+        formatInput(document.getElementById('cep'), '#####-###');
+        formatInput(document.getElementById('numero_celular'), '(##) ####-####');
+
+        // Função para mostrar/ocultar senha
+        function togglePassword() {
+            const senhaInput = document.getElementById('senha');
+            const type = senhaInput.type === 'password' ? 'text' : 'password';
+            senhaInput.type = type;
+            document.querySelector('.toggle-password').textContent = type === 'password' ? '👁️' : '🙈';
+        }
+
+        // Função para marcar/desmarcar todos os checkboxes
+        function toggleCheckboxes(checkbox) {
+            const checkboxes = document.querySelectorAll('input[name="bebida"]');
+            checkboxes.forEach(cb => cb.checked = checkbox.checked);
+        }
+
+        // Validação do formulário
+        document.getElementById('cadastroPassageiro').addEventListener('submit', function(event) {
+            let isValid = true;
+            const errorMessages = {
+                cpf: 'Campo CPF é obrigatório',
+                nome: 'Campo Nome é obrigatório',
+                email: 'Campo Email é obrigatório',
+                peso_passageiro: 'Campo Peso Passageiro é obrigatório',
+                cep: 'Campo CEP é obrigatório',
+                endereco: 'Campo Endereço é obrigatório',
+                numero_endereco: 'Campo Número Endereço é obrigatório',
+                complemento: 'Campo Complemento é obrigatório',
+                cidade: 'Campo Cidade é obrigatório',
+                uf: 'Campo UF é obrigatório',
+                pais: 'Campo País é obrigatório',
+                numero_celular: 'Campo Número Celular Passageiro é obrigatório',
+                numero_celular_familiar: 'Campo Número Celular Familiar é obrigatório',
+                comentario: 'Campo Comentário e Recados Familiar é obrigatório',
+                senha: 'Campo Senha é obrigatório',
+                peso_bagagem_mao: 'Campo Peso Bagagem Mão é obrigatório',
+                peso_bagagem_malas: 'Campo Peso Bagagem das Malas é obrigatório'
+            };
+
+            // Limpa mensagens de erro
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+
+            // Verifica os campos obrigatórios
+            Object.keys(errorMessages).forEach(key => {
+                const field = document.getElementById(key);
+                if (field && !field.value) {
+                    document.getElementById('error-' + key).textContent = errorMessages[key];
+                    isValid = false;
+                }
+            });
+
+            // Valida se os campos de peso têm valores positivos
+            ['peso_passageiro', 'peso_bagagem_mao', 'peso_bagagem_malas'].forEach(key => {
+                const field = document.getElementById(key);
+                if (field && field.value < 0) {
+                    document.getElementById('error-' + key).textContent = 'Digite valores positivos';
+                    isValid = false;
+                }
+            });
+
+            if (!isValid) {
+                event.preventDefault(); // Impede o envio do formulário se houver erros
+                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('error-message').textContent = 'Por favor, preencha todos os campos obrigatórios corretamente.';
+            } else {
+                document.getElementById('success-message').style.display = 'block';
+                document.getElementById('success-message').textContent = 'Formulário enviado com sucesso!';
+            }
+        });
+    </script>
+</body>
+</html>
