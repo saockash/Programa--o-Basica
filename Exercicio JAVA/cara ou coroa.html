@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara ou Coroa</title>
+</head>
+
+<body>
+    <h1>Cara ou Coroa!</h1>
+    <button onclick="jogar('cara')">Cara</button>
+    <button onclick="jogar('coroa')">Coroa</button>
+    <div id="resultado"></div>
+
+    <script>
+        function jogar(opcaoUsuario) {
+            const opcaoComputador = Math.random() < 0.5 ? 'cara' : 'coroa';
+            const resultado = opcaoUsuario === opcaoComputador ? `Você ganhou! Deu ${opcaoComputador}.` : `Você perdeu! Deu ${opcaoComputador}.`;
+            document.getElementById("resultado").textContent = resultado;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Velocidade</title>
+    <style>
+        .erro {
+            border: 2px solid red;
+            /* Borda vermelha para campos vazios */
+        }
+
+        .mensagem-erro {
+            color: red;
+            /* Texto da mensagem de erro em vermelho */
+            font-weight: bold;
+            /* Negrito para destacar a mensagem */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cálculo de Velocidade</h1>
+    <label for="distancia">Distância (km):</label>
+    <input type="number" id="distancia" placeholder="km" /><br><br>
+
+    <label for="tempo">Tempo (horas):</label>
+    <input type="number" id="tempo" placeholder="horas" /><br><br>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcular() {
+            const distanciaInput = document.getElementById("distancia");
+            const tempoInput = document.getElementById("tempo");
+            const distancia = distanciaInput.value;
+            const tempo = tempoInput.value;
+
+            // Remove a classe de erro
+            distanciaInput.classList.remove("erro");
+            tempoInput.classList.remove("erro");
+
+            // Verifica se ambos os campos estão preenchidos
+            let erro = false;
+            if (!distancia) {
+                distanciaInput.classList.add("erro");
+                erro = true;
+            }
+            if (!tempo) {
+                tempoInput.classList.add("erro");
+                erro = true;
+            }
+            if (erro) {
+                document.getElementById("resultado").innerHTML = "<span class='mensagem-erro'>Preencha todos os campos.</span>";
+                return; // Sai da função se algum campo estiver vazio
+            }
+
+            // Calcula a velocidade
+            const velocidade = distancia / tempo;
+            // Exibe o resultado
+            document.getElementById("resultado").textContent = `Velocidade: ${velocidade} km/h`;
+        }
+    </script>
+</body>
+
+</html>

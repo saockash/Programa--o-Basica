@@ -11,20 +11,20 @@
                 audio = new Audio('applause.mp3'); // Altere para o caminho do arquivo de som
             } else if (tipo === 'bad') {
                 audio = new Audio('fake.mp3'); // Altere para o caminho do arquivo de som 
+            } else if (tipo === 'fazenda') {
+                audio = new Audio('https://www.myinstants.com/media/sounds/a-fazenda-e-toda-sua.mp3'); // Altere para o caminho do arquivo de som
             }
             audio.play();
         }
     </script>
-</head>.
+</head>
 <body>
-    <h1> Clique se voce  gostou?<br> e depois escute SOM</h1>
-    
-    <button onclick="tocarSom('like')">LIKE ❤</button> <!-- Para mostra Emotion Botão WINDOWS + .-->
-    <button onclick="tocarSom('bad')">RUIM 😭</button> <!-- Para mostra Emotion Botão WINDOWS + .-->
+    <h1>Clique se você gostou?<br> e depois escute SOM</h1>
+    <button onclick="tocarSom('like')">LIKE ❤</button>
+    <button onclick="tocarSom('bad')">RUIM 😭</button>
+    <button onclick="tocarSom('fazenda')">SOM DA FAZENDA 🎵</button>
     <!-- Comentário sobre a fonte dos efeitos sonoros -->
     <!-- Efeitos sonoros obtidos de https://pixabay.com/pt/sound-effects/search/agua/ -->
-<!--Alguns sites precisam apenas de um link Mp3 para ativar a música no player.  Para obter esse link, siga os passos abaixo:
-1º Acesse o site: http://palcomp3.com/-->
-<!--https://www.myinstants.com/en/search/?name=Rodrigo+faro-->
+     <!--https://www.myinstants.com/en/instant/a-fazenda-e-toda-sua-5177/-->
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela componente CAIXA TEXTO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Exemplo do componente CAIXA TEXTO</h1>
+    <label for="nome">NOME COMPLETO</label><br>
+    <input type="text" id="nome" style="width: 300px; text-align: center;" aria-required="true">
+    <button id="gravar">Gravar</button>
+    <button id="limpar">Limpar</button>
+    <p id="mensagem"></p>
+
+    <script>
+        document.getElementById('gravar').addEventListener('click', function () {
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem');
+            if (nome === "") {
+                mensagem.textContent = "Erro: campo mandatório.";
+                mensagem.style.color = "red";
+            } else {
+                mensagem.textContent = `O dado selecionado foi: ${nome}`;
+                mensagem.style.color = "green";
+                document.getElementById('nome').value = ""; // Limpa o campo
+            }
+        });
+
+        document.getElementById('limpar').addEventListener('click', function () {
+            document.getElementById('nome').value = ""; // Limpa o campo
+            document.getElementById('mensagem').textContent = ""; // Limpa a mensagem
+        });
+    </script>
+</body>
+
+</html>

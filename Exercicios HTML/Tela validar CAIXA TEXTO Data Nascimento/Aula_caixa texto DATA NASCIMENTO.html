@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela componente CAIXA TEXTO DATA NASCIMENTO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Exemplo do componente CAIXA TEXTO </h1>
+    <label for="datanascimento">Data Nascimento (DD/MM/AAAA)</label>
+    <br>
+    <input type="text" id="datanascimento" style="width: 300px; text-align: center;" aria-required="true"
+        placeholder="DD/MM/AAAA">
+
+    <button id="gravar">Gravar</button>
+    <button id="limpar">Limpar</button>
+    <p id="mensagem"></p>
+
+    <script>
+        function validarDataNascimento(data) {
+            // Verifica se a data está no formato DD/MM/AAAA
+            const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d\d$/;
+            return regex.test(data);
+        }
+
+        function dataMaiorQueHoje(data) {
+            const [dia, mes, ano] = data.split('/').map(Number);
+            const dataNascimento = new Date(ano, mes - 1, dia);
+            const hoje = new Date();
+
+            return dataNascimento > hoje;
+        }
+
+        document.getElementById('gravar').addEventListener('click', function () {
+            const datanascimento = document.getElementById('datanascimento').value;
+            const mensagem = document.getElementById('mensagem');
+
+            if (datanascimento === "") {
+                mensagem.textContent = "Erro: campo mandatório.";
+                mensagem.style.color = "red";
+            } else if (!validarDataNascimento(datanascimento)) {
+                mensagem.textContent = "Erro: data deve estar no formato DD/MM/AAAA.";
+                mensagem.style.color = "red";
+            } else if (dataMaiorQueHoje(datanascimento)) {
+                mensagem.textContent = "Erro: Data Nascimento não pode ser maior que hoje.";
+                mensagem.style.color = "red";
+            } else {
+                mensagem.textContent = `O dado selecionado foi: ${datanascimento}`;
+                mensagem.style.color = "green";
+                document.getElementById('datanascimento').value = ""; // Limpa o campo
+            }
+        });
+
+        document.getElementById('limpar').addEventListener('click', function () {
+            document.getElementById('datanascimento').value = ""; // Limpa o campo
+            document.getElementById('mensagem').textContent = ""; // Limpa a mensagem
+        });
+    </script>
+</body>
+
+</html>

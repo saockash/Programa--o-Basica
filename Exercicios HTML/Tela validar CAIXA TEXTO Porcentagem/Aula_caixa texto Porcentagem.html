@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela componente CAIXA TEXTO Porcentagem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Exemplo do componente CAIXA TEXTO Porcentagem</h1>
+    <label for="porcento">Porcentagem (0% até 100%)</label><br>
+    <input type="text" id="porcento" style="width: 300px; text-align: center;" aria-required="true">
+    <button id="gravar">Gravar</button>
+    <button id="limpar">Limpar</button>
+    <p id="mensagem"></p>
+
+    <script>
+        function validarPorcentagem(porcento) {
+            const valor = parseFloat(porcento);
+            if (isNaN(valor)) {
+                return "Porcentagem deve ser um número."; // Verifica se não é um número
+            }
+            if (valor < 0) {
+                return "Erro: porcentagem não pode ser menor que 0.";
+            }
+            if (valor > 100) {
+                return "Erro: porcentagem não pode ser maior que 100.";
+            }
+            return ""; // Retorna vazio se for válido
+        }
+
+        document.getElementById('gravar').addEventListener('click', function () {
+            const porcento = document.getElementById('porcento').value;
+            const mensagem = document.getElementById('mensagem');
+
+            if (porcento === "") {
+                mensagem.textContent = "Erro: campo mandatório.";
+                mensagem.style.color = "red";
+            } else {
+                const erro = validarPorcentagem(porcento);
+                if (erro) {
+                    mensagem.textContent = erro;
+                    mensagem.style.color = "red";
+                } else {
+                    mensagem.textContent = `O dado selecionado foi: ${porcento}%`;
+                    mensagem.style.color = "green";
+                    document.getElementById('porcento').value = ""; // Limpa o campo
+                }
+            }
+        });
+
+        document.getElementById('limpar').addEventListener('click', function () {
+            document.getElementById('porcento').value = ""; // Limpa o campo
+            document.getElementById('mensagem').textContent = ""; // Limpa a mensagem
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela componente DROPDOWN</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Exemplo do componente DROPDOWN</h1>
+    <label for="sexo">SEXO</label><br>
+    <select id="sexo" name="sexo">
+        <option value="">Selecione</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
+    </select>
+    <button id="gravar">Gravar </button>
+
+    <p id="mensagem"></p>
+
+    <script>
+        document.getElementById('gravar').addEventListener('click', function () {
+            const sexo = document.getElementById('sexo').value;
+            const mensagem = document.getElementById('mensagem');
+
+            if (sexo === "") {
+                mensagem.textContent = "Erro: campo mandatório.";
+                mensagem.style.color = "red";
+            } else {
+                mensagem.textContent = `O dado selecionado foi: ${sexo}`;
+                mensagem.style.color = "green";
+            }
+        });
+    </script>
+</body>
+
+</html>

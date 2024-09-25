@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Velocidade</title>
+</head>
+
+<body>
+    <h1>Cálculo de Velocidade</h1>
+    <button onclick="calcular()">Calcular Velocidade</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcular() {
+            // Solicita a distância e o tempo ao usuário
+            const distancia = prompt("Digite a distância em km:");
+            const tempo = prompt("Digite o tempo em horas:");
+
+            // Verifica se os valores foram preenchidos
+            if (!distancia || !tempo) {
+                document.getElementById("resultado").innerHTML = "<span style='color:red; font-weight:bold;'>Preencha todos os campos.</span>";
+                return; // Sai da função se algum campo estiver vazio
+            }
+
+            // Calcula a velocidade
+            const velocidade = distancia / tempo;
+            // Exibe o resultado
+            document.getElementById("resultado").textContent = `Velocidade: ${velocidade} km/h`;
+        }
+    </script>
+</body>
+
+</html>

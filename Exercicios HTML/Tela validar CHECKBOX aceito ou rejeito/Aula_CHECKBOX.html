@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela componente CHECKBOX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Exemplo do componente CHECKBOX</h1>
+    <label for="aceitar">Leia o Texto e clica aceitar</label><br>
+    <p>Todas as informações são privativas e não serão divulgadas.</p>
+    <input type="checkbox" id="aceitar" aria-required="true">
+    <label for="aceitar">Aceite</label>
+    <br><br>
+    <button id="gravar">Gravar</button>
+    <button id="limpar">Limpar</button>
+    <p id="mensagem"></p>
+
+    <script>
+        document.getElementById('gravar').addEventListener('click', function () {
+            const checkbox = document.getElementById('aceitar');
+            const mensagem = document.getElementById('mensagem');
+            if (!checkbox.checked) {
+                mensagem.textContent = "Erro: você deve aceitar os termos.";
+                mensagem.style.color = "red";
+            } else {
+                mensagem.textContent = "Você aceitou os termos.";
+                mensagem.style.color = "green";
+                checkbox.checked = false; // Desmarca o checkbox
+            }
+        });
+
+        document.getElementById('limpar').addEventListener('click', function () {
+            document.getElementById('aceitar').checked = false; // Desmarca o checkbox
+            document.getElementById('mensagem').textContent = ""; // Limpa a mensagem
+        });
+    </script>
+</body>
+
+</html>
